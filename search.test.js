@@ -9,7 +9,7 @@ beforeAll(async () => {
   await mongoose.connect(connectionString);
 });
 
-const searchString = "lol";
+const searchString = "wow";
 
 // TDD for check the search Route
 
