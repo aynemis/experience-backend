@@ -38,7 +38,7 @@ router.post("/create-checkout-session", async (req, res) => {
       },
     ],
     mode: "payment",
-    return_url: `https://experience-frontend.vercel.app/paymentReturn?session_id={CHECKOUT_SESSION_ID}`,
+    return_url: `https://experience-beta.vercel.app/paymentReturn?session_id={CHECKOUT_SESSION_ID}`,
   });
 
   res.send({ clientSecret: session.client_secret, productName, productPrice });
@@ -66,7 +66,7 @@ router.post("/process_payment", async (req, res) => {
       payment_method: paymentMethodId,
       description: "test de stripe",
       confirm: true, // Confirme le paiement immédiatement
-      return_url: "https://experience-frontend.vercel.app/",
+      return_url: "https://experience-beta.vercel.app/",
     });
     console.log("Payment", paymentIntent);
     res.json({
